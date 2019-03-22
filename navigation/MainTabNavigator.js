@@ -76,7 +76,7 @@ SettingsStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'md-add-circle' : 'md-options'}
+      name={Platform.OS === 'ios' ? 'ios-person' : 'md-options'}
     />
   ),
 };
