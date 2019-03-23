@@ -8,16 +8,67 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+
+import Layout from '../constants/Layout';
+
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
 import { Header } from 'react-native-elements';
 
+import Carousel from 'react-native-snap-carousel';
+
+const Images = [{ uri: 'http://placehold.jp/24/cc9999/993333/100x100.png' }];
+
 export default class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      carouselItems: [
+        {
+          image: Images[0],
+          userName: 'kazki',
+        },
+        {
+          image: Images[0],
+          userName: 'kazki',
+        },
+        {
+          image: Images[0],
+          userName: 'kazki',
+        },
+        {
+          image: Images[0],
+          userName: 'kazki',
+        },
+
+        {
+          image: Images[0],
+          userName: 'kazki',
+        },
+        {
+          image: Images[0],
+          userName: 'kazki',
+        },
+      ],
+    };
+  }
   static navigationOptions = {
     header: null,
   };
+
+  _renderItem ({item, index}) {
+    return(
+      <View style={styles.carouselItems}>
+        <Image
+          source={item.image}
+          style={styles.carouselImage}
+        />
+        <Text>{item.userName}</Text>
+      </View>
+    );
+  }
 
   render() {
     return (
@@ -29,7 +80,17 @@ export default class HomeScreen extends React.Component {
           rightComponent={{ icon: 'near-me' }}
         />
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
+          <Carousel
+            style={styles.carouselStyle}
+            ref={c => {this._carousel = c}}
+            data={this.state.carouselItems}
+            renderItem={this._renderItem}
+            sliderWidth={Layout.window.width}
+            itemWidth={100}
+            enableSnap={false}
+            firstItem={1}
+          />
+          {/* <View style={styles.welcomeContainer}>
             <Image
               source={
                 __DEV__
@@ -38,7 +99,7 @@ export default class HomeScreen extends React.Component {
               }
               style={styles.welcomeImage}
             />
-          </View>
+          </View> */}
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
@@ -119,7 +180,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 30,
+    paddingTop: 10,
+  },
+  carouselItems: {
+    height: Layout.window.height/7
+  },
+  carouselImage: {
+    flex: 3,
+    borderRadius: 40,
   },
   welcomeContainer: {
     alignItems: 'center',
