@@ -12,6 +12,8 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 
+import { Header } from 'react-native-elements';
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -20,6 +22,12 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <Header
+          backgroundColor='#fff'
+          leftComponent={{ icon: 'add-a-photo'}}
+          centerComponent={{ text: 'Instagram' }}
+          rightComponent={{ icon: 'near-me' }}
+        />
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
             <Image
