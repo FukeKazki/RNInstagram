@@ -57,16 +57,29 @@ export default class HomeScreen extends React.Component {
   _renderItem ({item, index}) {
     return(
       <View style={styles.carouselItems}>
-        {/* <Image
-          source={item.image}
-          style={styles.carouselImage}
-        /> */}
         <Avatar
           rounded
           source={item.image}
           size='medium'
         />
         <Text>{item.userName}</Text>
+      </View>
+    );
+  }
+
+  _renderTitleComponent () {
+    return(
+      <View style={styles._renderTitleComponent}>
+        <Avatar
+          rounded
+          source={{uri: 'https://scontent-nrt1-1.cdninstagram.com/vp/a78056e25739feafa0a0774eda38848c/5D17F577/t51.2885-15/e35/54800420_2369011479987240_7022525315400684312_n.jpg?_nc_ht=scontent-nrt1-1.cdninstagram.com'}}
+          size='small'
+        />
+        <Text style={styles.cardTitle}>otani_emiri</Text>
+        <Icon
+          name='more-horiz'
+          iconStyle={{marginLeft: 190}}
+        />
       </View>
     );
   }
@@ -93,21 +106,21 @@ export default class HomeScreen extends React.Component {
           />
           
           <Card
-            title='usename'
-            // image={require('../assets/images/50_50.png')}
+            title={this._renderTitleComponent()}
             image={{uri:'https://scontent-nrt1-1.cdninstagram.com/vp/a78056e25739feafa0a0774eda38848c/5D17F577/t51.2885-15/e35/54800420_2369011479987240_7022525315400684312_n.jpg?_nc_ht=scontent-nrt1-1.cdninstagram.com'}}
             imageStyle={{height: 300}}
           >
             <View style={styles.iconsContainer}>
               <Icon
-                name='star-border'
+                name='favorite-border'
               />
               <Icon
-                name='textsms'
+                // name='textsms'
+                name='chat-bubble-outline'
                 iconStyle={{marginLeft: 10}}
               />
               <Icon
-                name='near-me'
+                name='send'
                 iconStyle={{marginLeft: 10}}
               />
               <Icon
@@ -165,14 +178,19 @@ const styles = StyleSheet.create({
   carouselItems: {
     height: Layout.window.height/10
   },
-  carouselImage: {
-    flex: 3,
-    // borderRadius: 40,
-  },
   cardText: {
     marginTop: 10,
   },
   iconsContainer: {
     flexDirection: 'row',
+  },
+  _renderTitleComponent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 10,
+    height: 50,
+  },
+  cardTitle: {
+    marginLeft: 10,
   },
 });
