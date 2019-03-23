@@ -11,11 +11,7 @@ import {
 
 import Layout from '../constants/Layout';
 
-import { WebBrowser } from 'expo';
-
-import { MonoText } from '../components/StyledText';
-
-import { Header, Card, Icon } from 'react-native-elements';
+import { Header, Card, Icon, Avatar } from 'react-native-elements';
 
 import Carousel from 'react-native-snap-carousel';
 
@@ -61,9 +57,14 @@ export default class HomeScreen extends React.Component {
   _renderItem ({item, index}) {
     return(
       <View style={styles.carouselItems}>
-        <Image
+        {/* <Image
           source={item.image}
           style={styles.carouselImage}
+        /> */}
+        <Avatar
+          rounded
+          source={item.image}
+          size='medium'
         />
         <Text>{item.userName}</Text>
       </View>
@@ -93,7 +94,9 @@ export default class HomeScreen extends React.Component {
           
           <Card
             title='usename'
-            image={require('../assets/images/50_50.png')}
+            // image={require('../assets/images/50_50.png')}
+            image={{uri:'https://scontent-nrt1-1.cdninstagram.com/vp/a78056e25739feafa0a0774eda38848c/5D17F577/t51.2885-15/e35/54800420_2369011479987240_7022525315400684312_n.jpg?_nc_ht=scontent-nrt1-1.cdninstagram.com'}}
+            imageStyle={{height: 300}}
           >
             <View style={styles.iconsContainer}>
               <Icon
@@ -157,14 +160,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   contentContainer: {
-    paddingTop: 10,
+    paddingTop: 5,
   },
   carouselItems: {
-    height: Layout.window.height/7
+    height: Layout.window.height/10
   },
   carouselImage: {
     flex: 3,
-    borderRadius: 40,
+    // borderRadius: 40,
   },
   cardText: {
     marginTop: 10,
