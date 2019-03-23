@@ -15,6 +15,8 @@ import { Header, Card, Icon, Avatar } from 'react-native-elements';
 
 import Carousel from 'react-native-snap-carousel';
 
+import PostCard from '../components/PostCard';
+
 const Images = [{ uri: 'http://placehold.jp/24/cc9999/993333/100x100.png' }];
 
 export default class HomeScreen extends React.Component {
@@ -104,63 +106,13 @@ export default class HomeScreen extends React.Component {
             enableSnap={false}
             firstItem={1}
           />
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
+          <PostCard/>
           
-          <Card
-            title={this._renderTitleComponent()}
-            image={{uri:'https://scontent-nrt1-1.cdninstagram.com/vp/a78056e25739feafa0a0774eda38848c/5D17F577/t51.2885-15/e35/54800420_2369011479987240_7022525315400684312_n.jpg?_nc_ht=scontent-nrt1-1.cdninstagram.com'}}
-            imageStyle={{height: 300}}
-          >
-            <View style={styles.iconsContainer}>
-              <Icon
-                name='favorite-border'
-              />
-              <Icon
-                // name='textsms'
-                name='chat-bubble-outline'
-                iconStyle={{marginLeft: 10}}
-              />
-              <Icon
-                name='send'
-                iconStyle={{marginLeft: 10}}
-              />
-              <Icon
-                name='bookmark-border'
-                iconStyle={{marginLeft: 200}}
-              />
-            </View>
-            <Text style={styles.cardText}>
-            {`
-            #シナモンコーデ ／(o・ω・o)＼💭
-            シナモン意識で全身ホワイト♡
-            ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-            フリフリ〜✨リボンなしでも可愛い🎀
-            これも #milkcocoa のワンピです💍
-            ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-            レースくつした #loveran 💅🏻
-            シューズ #niceclaup 💕
-            ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-            #サンリオピューロランド #シナモン #みりにゃ服
-            `}
-            </Text>
-          </Card>
-          <Card
-            title='usename'
-            image={require('../assets/images/50_50.png')}
-          >
-            <Text>textarea</Text>
-          </Card>
-          <Card
-            title='usename'
-            image={require('../assets/images/50_50.png')}
-          >
-            <Text>textarea</Text>
-          </Card>
-          <Card
-            title='usename'
-            image={require('../assets/images/50_50.png')}
-          >
-            <Text>textarea</Text>
-          </Card>
         </ScrollView>
       </View>
     );
