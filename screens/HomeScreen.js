@@ -17,6 +17,8 @@ import Carousel from 'react-native-snap-carousel';
 
 import PostCard from '../components/PostCard';
 
+import HomeHeader from '../components/HomeHeader';
+
 const Images = [{ uri: 'http://placehold.jp/24/cc9999/993333/100x100.png' }];
 
 export default class HomeScreen extends React.Component {
@@ -69,32 +71,12 @@ export default class HomeScreen extends React.Component {
     );
   }
 
-  _renderTitleComponent () {
-    return(
-      <View style={styles._renderTitleComponent}>
-        <Avatar
-          rounded
-          source={{uri: 'https://scontent-nrt1-1.cdninstagram.com/vp/a78056e25739feafa0a0774eda38848c/5D17F577/t51.2885-15/e35/54800420_2369011479987240_7022525315400684312_n.jpg?_nc_ht=scontent-nrt1-1.cdninstagram.com'}}
-          size='small'
-        />
-        <Text style={styles.cardTitle}>otani_emiri</Text>
-        <Icon
-          name='more-horiz'
-          iconStyle={{marginLeft: 190}}
-        />
-      </View>
-    );
-  }
+  
 
   render() {
     return (
       <View style={styles.container}>
-        <Header
-          backgroundColor='#fff'
-          leftComponent={{ icon: 'add-a-photo'}}
-          centerComponent={{ text: 'Instagram' }}
-          rightComponent={{ icon: 'near-me' }}
-        />
+        <HomeHeader/>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
           <Carousel
             style={styles.carouselStyle}
