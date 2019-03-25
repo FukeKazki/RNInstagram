@@ -115,7 +115,7 @@ export default class PostCard extends React.Component {
 
 const styles = StyleSheet.create({
     cardText: {
-      marginTop: 10,
+      // marginTop: 10,
     },
     iconsContainer: {
       flexDirection: 'row',
@@ -130,10 +130,4 @@ const styles = StyleSheet.create({
     cardTitle: {
       marginLeft: 10,
     },
-    // carouselStyle: {
-    //   flex:  1,
-    // },
-    // carouselItems: {
-    //   flex: 1,
-    // },
   });
