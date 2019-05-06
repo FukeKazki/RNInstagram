@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Header, Icon } from 'react-native-elements';
 
 export default class HomeHeader extends React.Component {
+    //Todo: アロー関数にする。カメラ機能を追加する
     _renderRightComponent() {
         return(
         <View style={styles.iconsContainer}>
